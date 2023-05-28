@@ -1,0 +1,21 @@
+.smain{
+    display: flex;
+    flex-direction: column;
+    /* border: 2px solid red; */
+    height: 99vh;
+    width: 20vw;
+    /* margin-left: 30px; */
+    background-color: cyan;
+}
+
+.smain .sidebar{
+    display: flex;
+        flex-direction: column;
+        /* background-color: aqua; */
+        height: 100%;
+        padding-left: 30px;
+        
+}
+.smain .sidebar NavLink{
+    margin: 10px 5px;
+}

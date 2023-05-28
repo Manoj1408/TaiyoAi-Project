@@ -1,0 +1,43 @@
+.cmain{
+    /* border: 2px solid black; */
+    /* background-color: red; */
+    width: 100%;
+}
+
+.cmain .form{
+    display: flex;
+    
+    justify-content: center;
+}
+/* .cmain .form .form1{
+    border: 2px solid red;
+} */
+.cmain .form .form1 div {
+    /* border: 2px solid red; */
+    margin: 15px 5px;
+    /* width: 20vw; */
+}
+.cmain .form .form1 div label{
+    margin: 5px 5px;
+}
+.cmain .form .form1 button{
+    margin: 10px 5px;
+}
+
+table {
+    margin-top: 30px;
+    border: 1px solid black;
+    margin-left: 40px;
+    width: 50vw;
+}
+table,
+th,
+td {
+    border: 1px solid black;
+    border-collapse: collapse;
+   
+}
+th,
+td{
+    text-align: center;
+}

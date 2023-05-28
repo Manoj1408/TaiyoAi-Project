@@ -1,24 +1,22 @@
 import logo from './logo.svg';
 import './App.css';
+import Sidebar from './components/Sidebar';
+import Contacts from './components/Contacts';
+import { Routes, Route } from "react-router-dom";
+import Map from './components/Map'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div className="main">
+        <Sidebar />
+
+        <Routes>
+          <Route path="/TaiyoAi-Project/" element={<Contacts />}></Route>
+          <Route path="/TaiyoAi-Project/map" element={<Map />}></Route>
+        </Routes>
+      </div>
+    </>
   );
 }
 
