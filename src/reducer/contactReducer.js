@@ -4,22 +4,22 @@ const initialState = {
   objectArray: [],
 };
 
-const counterReducer = (state = initialState, action) => {
+const contactReducer = (state = initialState, action) => {
 
   switch (action.type) {
-    case "CREATE_USER":
+    case CREATE_USER:
       return {
         ...state,
         objectArray: [...state.objectArray, action.payload],
       };
-    case "DELETE_USER":
+    case DELETE_USER:
       return {
         ...state,
         objectArray: state.objectArray.filter(
           (obj) => obj.id !== action.payload
         ),
       };
-    case "EDIT_USER":
+    case EDIT_USER:
       return {
         ...state,
         objectArray: state.objectArray.map((obj) => {
@@ -37,4 +37,4 @@ const counterReducer = (state = initialState, action) => {
       return state;
   }
 };
-export default counterReducer;
+export default contactReducer;

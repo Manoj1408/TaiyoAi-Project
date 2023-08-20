@@ -1,64 +1,67 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import "./Contacts.css";
 import { useSelector, useDispatch } from "react-redux";
 import {
   addObject,
   removeObject,
   editObject,
-} from "../actions/counterActionCreator";
+} from "../actions/contactActionCreator";
 
 export default function Contacts() {
-    const dispatch = useDispatch();
-    const [fname,setFName] = useState();
-    const [lname,setLName] = useState();
-    const [active,setActive] = useState();
-    let editObj = {};
-    const [num, setNum] = useState(null);
+  const dispatch = useDispatch();
+  const [fname, setFName] = useState();
+  const [lname, setLName] = useState();
+  const [active, setActive] = useState();
+  let editObj = {};
+  const [num, setNum] = useState(null);
 
+  const [show, setShow] = useState(true);
 
-    const [show,setShow] = useState(true);
+  let data = useSelector((state) => state.objectArray);
+  console.log(data);
 
-    
-    let data = useSelector((state) => state.objectArray);
-    console.log(data)
-    
-     function handleChange(e) {
-       setActive(e.target.value);
-     };
+  function handleChange(e) {
+    setActive(e.target.value);
+  }
 
-     function addUser() {
-        const newObject = { id: data.length+1, fname: fname, lname: lname , status : active};
-        dispatch(addObject(newObject));
-        // console.log("first");
-        setFName("");
-        setLName("");
-        setActive("");
-     }
-     function deleteUser(id){
-        // console.log(id);
-        dispatch(removeObject(id));
-     }
+  function addUser() {
+    const newObject = {
+      id: data.length + 1,
+      fname: fname,
+      lname: lname,
+      status: active,
+    };
+    dispatch(addObject(newObject));
+    // console.log("first");
+    setFName("");
+    setLName("");
+    setActive("");
+  }
+  function deleteUser(id) {
+    // console.log(id);
+    dispatch(removeObject(id));
+  }
 
-     function editUser(item) {
-       setFName(item.fname);
-       setLName(item.lname);
-       setActive(item.status);
-       setNum(item.id);
-        console.log(item)
-     }
-     function updateUser() {
-        editObj = {
-          id: num,
-          fname: fname,
-          lname: lname,
-          status: active,
-        };
-        console.log(editObj)
-       dispatch(editObject(editObj));
-       setFName("");
-       setLName("");
-       setActive("");
-     }
+  function editUser(item) {
+    setFName(item.fname);
+    setLName(item.lname);
+    setActive(item.status);
+    setNum(item.id);
+    console.log(item);
+  }
+  function updateUser() {
+    editObj = {
+      id: num,
+      fname: fname,
+      lname: lname,
+      status: active,
+    };
+    console.log(editObj);
+    dispatch(editObject(editObj));
+    setFName("");
+    setLName("");
+    setActive("");
+  }
   return (
     <>
       <div className="cmain">
@@ -109,8 +112,10 @@ export default function Contacts() {
                   />
                   <label htmlFor="">Inactive</label>
                 </div>
-                <button onClick={addUser}>Create</button>
-                <button onClick={updateUser}>Update</button>
+                <div>
+                  <button onClick={addUser}>Create</button>
+                  <button onClick={updateUser}>Update</button>
+                </div>
               </div>
             </div>
           )}

@@ -1,21 +1,31 @@
 .cmain{
     /* border: 2px solid black; */
     /* background-color: red; */
-    width: 100%;
+    width: 89vw;
+    height: 83vh;
+    padding: 1.5rem;
 }
 
 .cmain .form{
     display: flex;
-    
+    /* border: 2px solid black; */
     justify-content: center;
 }
-/* .cmain .form .form1{
-    border: 2px solid red;
-} */
+.cmain .form .form1{
+    border: 2px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 60vw;
+}
 .cmain .form .form1 div {
     /* border: 2px solid red; */
     margin: 15px 5px;
-    /* width: 20vw; */
+    
+    /* width: 60vw; */
+    /* margin: auto; */
+    
 }
 .cmain .form .form1 div label{
     margin: 5px 5px;

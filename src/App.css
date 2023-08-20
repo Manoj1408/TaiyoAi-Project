@@ -1,3 +1,18 @@
 .main{
   display: flex;
+  flex-direction: column;
 }
+
+.sidebar {
+ display: flex;
+ flex-direction: row;
+}
+
+.worldmap{
+  padding: 1.5rem;
+}
+
+.chart{
+  padding: 1.5rem;
+}
+

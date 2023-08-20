@@ -1,6 +1,6 @@
 import { createStore } from "redux";
-import counterReducer from "./reducer/counterReducer.js";
+import contactReducer from "./reducer/contactReducer.js";
 
-const store = createStore(counterReducer);
+const store = createStore(contactReducer);
 
 export default store;
